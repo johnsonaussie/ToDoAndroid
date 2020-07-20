@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
              mc:Ignorable="d"
              x:Class="ToDoAndroid.TodoItemPage">
     <ContentPage.Content>
@@ -13,6 +14,24 @@
             <Entry Text="{Binding Notes}" />
             <Label Text="Done" />
             <Switch IsToggled="{Binding Done}" />
+            
+            <Label Text="To Do Start Date:" />
+
+            <DatePicker x:Name="startDatePicker"
+                    Format="D"
+                    Margin="30, 0, 0, 30" 
+                    MinimumDate="{x:Static sys:DateTime.Now}" 
+                    Date="{Binding StartTask, Mode=TwoWay}"/>
+
+            <Label Text="To Do End Date:" />
+
+            <DatePicker x:Name="endDatePicker"
+                   
+                   Format="D"
+                   Margin="30, 0, 0, 30" 
+                   MinimumDate="{x:Static sys:DateTime.Now}"
+                   Date="{Binding EndTask, Mode=TwoWay}"/>
+
             <Button Text="Save" Clicked="OnSaveClicked" />
             <Button Text="Delete" Clicked="OnDeleteClicked" />
             <Button Text="Cancel" Clicked="OnCancelClicked" />

@@ -12,5 +12,7 @@ namespace ToDoAndroid
         public string Name { get; set; }
         public string Notes { get; set; }
         public bool Done { get; set; }
+        public DateTime StartTask {get;set;}
+        public DateTime EndTask { get; set; }
     }
 }

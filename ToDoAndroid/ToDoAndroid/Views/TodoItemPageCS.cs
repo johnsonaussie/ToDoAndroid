@@ -22,6 +22,12 @@ namespace ToDoAndroid
             var doneSwitch = new Switch();
             doneSwitch.SetBinding(Switch.IsToggledProperty, "Done");
 
+            var startTask = new Entry();
+            startTask.SetBinding(Entry.TextProperty, " StartTask");
+
+            var endTask = new Entry();
+            endTask.SetBinding(Entry.TextProperty, "EndTask");
+
             var saveButton = new Button { Text = "Save" };
             saveButton.Clicked += async (sender, e) =>
             {
@@ -54,6 +60,10 @@ namespace ToDoAndroid
                     nameEntry,
                     new Label { Text = "Notes" },
                     notesEntry,
+                    new Label { Text ="Start"},
+                    startTask,
+                    new Label {Text ="End"},
+                    endTask,
                     new Label { Text = "Done" },
                     doneSwitch,
                     saveButton,
